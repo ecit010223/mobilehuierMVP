@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 5.0引入一个全新的特性，允许你对view设置theme，这种设置会影响控件及其包含的子控件 -->
+<!-- 只要使用 android:theme 这个属性就好，新版本的兼容库可以在 compat 和 framework 之间无缝地切换功能 -->
+<android.support.design.widget.AppBarLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/AppTheme.AppBarOverlay">
+
+    <!-- app:popupTheme -->
+    <!-- 有时候我们有需求：ActionBar文字是白的，ActionBar Overflow弹出的是白底黑字-->
+    <!-- 让ActionBar文字是白的,那么对应的theme肯定是Dark,可是让ActionBar弹出的是白底黑字,那么需要Light主题,popupTheme就派上用场了 -->
+    <!-- Toolbar的layout_height属性，要用“?attr/actionBarSize”而不是“?android:attr/actionBarSize”，-->
+    <!-- 替换后可解决NavigationIcon不垂直居中的问题。-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay"
+        app:titleTextAppearance="@style/Toolbar_TextAppearance_White"/>
+</android.support.design.widget.AppBarLayout>

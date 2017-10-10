@@ -1,0 +1,34 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <!-- 使用Toolbar时，如果单纯的当作控件来使用，主题是不需要单独设置的。-->
+        <!-- 但是如果想用他来替代ActionBar，那么需要配置为Theme.AppCompat.NoActionBar主题，-->
+        <!-- 或者在主题中加入如下两行： -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--在无需多点触控的页面上，建议关闭多点触控-->
+        <item name="android:splitMotionEvents">false</item>
+    </style>
+
+    <!-- android:theme这个属性的实现，因为有ContextThemeWrapper类，该类包裹（wrap）一个存在的Context -->
+    <!-- (这里指你的Activity)，之后覆盖(overlay)一个新的主题在当前Context的主题之上，这也是为什么叫ThemeOverlay。-->
+    <!-- Toolbar常用的ThemeOverlay: -->
+    <!-- ThemeOverlay.AppCompat.Light.ActionBar -->
+    <!-- ThemeOverlay.AppCompat.Dark.ActionBar -->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="Toolbar_TextAppearance_White">
+        <item name="android:textSize">@dimen/font_size_l</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+</resources>
